@@ -12,7 +12,7 @@ class NotesController < ApplicationController
   def index
       @notes = Note.all
      end
-  end
+  
 
   def show
     @note = Note.find(params[:id])
@@ -20,14 +20,15 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
+  end
   
     def edit
       @note = Note.find(params[:id])
-
+    end
       private
 
   def notes_params
     params.require(:note).permit(:title, :description)
   end
   end
-  end
+  
